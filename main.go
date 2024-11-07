@@ -159,7 +159,7 @@ func GetStudentSummary(w http.ResponseWriter, r *http.Request) {
 func callOllamaAPI(student Student) (string, error) {
     const ollamaURL = "http://localhost:11434/api/generate"
 
-    prompt := fmt.Sprintf("Provide some made up information about the student with ID %d. The student's name is %s, they are %d years old, and their email is %s.Summarize the above given details in a paragraph.", student.ID, student.Name, student.Age, student.Email)
+    prompt := fmt.Sprintf("Summarize this given information about the student with ID %d. The student's name is %s, they are %d years old, and their email is %s in a paragraph", student.ID, student.Name, student.Age, student.Email)
 
 
     // Prepare the request payload
